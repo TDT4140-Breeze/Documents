@@ -10,19 +10,38 @@
 \usepackage{cleveref}
 \usepackage{adjustbox}
 \usepackage{color}
+\hypersetup{
+    colorlinks = true,
+}
+
+\newcommand\fnurl[2]{%
+  \href{#2}{#1}\footnote{\url{#2}}%
+}
 
 \setcounter{section}{-1}
 
-\title{Software Engineering TDT4140 - Project Plan}
+\title{Software Engineering TDT4140 \\ Group 26: Project Plan}
+
+%\author{\begin{adjustbox}{center}
+%\begin{tabular}{ll}
+%    Sindre Hansen & Vegard Helgesen Hesselberg \\
+%    Eirik Rismyhr & Stian Sørli
+%\end{tabular}
+%\end{adjustbox}}
+
 \author{Sindre Hansen \and Vegard Helgesen Hesselberg \and Eirik Rismyhr \and Stian Sørli}
+
 \date{Spring 2017}
 
 \begin{document}
 \maketitle
-\rule{\linewidth}{0.5mm}
+%\rule{\linewidth}{0.5mm}
+\tableofcontents
+\newpage
 
 \section{Team information}
 Some stuff about the team here.
+
 \input{problem}
 
 \input{solution}
