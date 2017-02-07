@@ -2,15 +2,23 @@
 
 \subsection{Deliverables}
 \subsubsection{Software}
-A functional roBOT, able to connect end users together in a chat room and interact with them based on the users' input. The roBOT will also gather all of the users' input as a chat log, which will be automatically sent to the lecturer and/or saved by the students.
+A functional roBOT, able to connect end users together in a chat room and interact with them based on the users' input. The roBOT will also gather all of the users' input as a chat log, which will be automatically sent to the lecturer and/or saved by the students. 
 
 \subsubsection{Infrastructure}
-We are aiming for a web-based solution that will be able to run in both browser and on smartphones, although the smartphone solution is not highly prioritized. TODO
+We are aiming for a web-based solution that will be able to run in both browser and on smartphones, although the smartphone solution is not highly prioritized. 
 
-server, frontend som kan kommunisere med serveren, backend
+At this stage we aim to implement the front-end web application in Django and use Tornado as our web server. We will also need a database for storing messages etc., most likely a MySQL database. 
+
+% server, frontend som kan kommunisere med serveren, backend
+% Hva tenker vi å bruke som server, frontend?
+% Hvilke programmer bruker vi for å kode? django, tornado/twisted
 
 \subsubsection{Data} 
-TODO
+Throughout the development of the software, we will test the application among the userbase to get feedback on its functionality and use.
+This will be documented so we can see how the software and our vision of the software changes over time, as well as giving us insight in how the userbase responds to our product.
+There will be delivered documentation on the entire software engineering process, both as a requirement for the TDT4140 course, but also for our stakeholders' sake.
+There will be a user guide, including how to set up all necessary frameworks and how to properly use the roBOT, so that when this software is distributed, it'll be possible for potential users to actually utilize it.
+
 
 \subsection{Work}
 See \cref{app:Activity plan} for an activity plan with estimated working hours attached to each task. 
@@ -20,16 +28,16 @@ See \cref{app:Activity plan} for an activity plan with estimated working hours a
 \begin{adjustbox}{center}
 \begin{tabular}{ l | l | l}
     Member & Role & Responsibility \\ \hline
-    Eirik Rismyhr & & \\ 
-    Sindre Hansen & & \\ 
-    Stian Sørli & & \\ 
-    Vegard Helgesen Hesselberg & Testwriter and tester & \\ 
+    Eirik Rismyhr & Developer & Back-end\\ 
+    Sindre Hansen & Developer & Front-end \\ 
+    Stian Sørli & Team leader & \\ 
+    Vegard Helgesen Hesselberg & Developer & Tests and testing\\ 
     
 \end{tabular}
 \end{adjustbox}
 
 
 \subsection{Way of working}
-We will use git for version control of active development. For project related communication we will be using gitter, which is directly connected to github, although we also have a Facebook-chat for other communication. Our git repository can be found on github \fnurl{here}{https://github.com/sindrehan/TDT4140-Project}.
+We will use git for version control of active development. For project related communication we will be using gitter, which is directly connected to github. Our git repository can be found on github \fnurl{here}{https://github.com/sindrehan/TDT4140-Project}. We plan on meeting every tuesday from 10-14 as well as wednesday from 10-14.
 
-Quality assurance will be done as we go, trying to work in pairs as much as possible. This way we get a wider knowledge of the project as a whole. As the project goes on we will write tests as we discover what needs to be tested. 
+Quality assurance will be done as we go, trying to work in pairs as much as possible. This way everyone will get a wider knowledge of the project as a whole instead of it being focused on one person. As the project goes on we will write tests as we discover what needs to be tested. 
