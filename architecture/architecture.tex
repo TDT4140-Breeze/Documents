@@ -141,7 +141,7 @@ Students chatting must be connected together, over a safe and fast connection.
 \subsection{Related user stories}
 Same as Django.
 \subsection{Solution}
-For the system's communication, we will implement a Tornado web server, which allows for many open connections to be connected together. It is event-based which enables the functionality we want.
+Centrifugo allows us to keep a connection open between the client and the server. It is also event based which is an essential feature for us.
 \subsection{Considered alternative solutions}
 \begin{itemize}
     \item A polling-based framework
