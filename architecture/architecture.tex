@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{hyperref}
 \usepackage{parskip}
+\usepackage{titlesec}
 \usepackage{float}
 \usepackage{graphicx}
 \usepackage{cleveref}
@@ -19,9 +20,11 @@
   \href{#2}{#1}\footnote{\url{#2}}%
 }
 
+\titlespacing{\subsection}{0pt}{\parskip}{-4pt}
+
 \setcounter{tocdepth}{1}
 
-\title{Software Engineering TDT4140 \\ Group 26: Preliminary Architecture}
+\title{TDT4140 -- Software Engineering \\ Group 26: Preliminary Architecture}
 
 \author{Sindre Hansen \and Vegard Helgesen Hesselberg \and Eirik Rismyhr \and Stian Sørli}
 
@@ -33,7 +36,130 @@
 \thispagestyle{empty}
 \clearpage
 \setcounter{page}{1}
-\section{Decision 1}
+\section{Scalable web app}
+\subsection{Description}
+Implementing the bot as a scalable web app
+\subsection{Stakeholder concerns}
+Concern from lecturers: Should work on both computers and smart phones. 
+\subsection{Related user stories}
+User story \# 9
+\subsection{Solution}
+Developing the bot as a scalable web app. Doing this, the bot will be easily accessed and utilized during lectures, as it's accessible through both laptops and mobile phones. 
+\subsection{Considered alternative solutions}
+\begin{itemize}
+    \item Developing the bot as a native app running on either a computer or a mobile device.
+    \item Developing the bot as a plugin to another existing application.
+\end{itemize}
+\subsection{Influencing forces}
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Positive}
+    \begin{itemize}
+        \item Accessibility for the end users
+        \item Ability to run on most devices without requiring extra development time
+    \end{itemize}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Negative}
+    \begin{itemize}
+        \item Variable internet connection can cause difficulties
+        \item Application may not be well supported by outdated software
+    \end{itemize}
+\end{minipage}
+
+\subsection{Evaluation}
+
+\newpage
+\section{MySQL as database}
+\subsection{Description}
+The chat logs will be saved in a MySQL database. 
+\subsection{Stakeholder concerns}
+What will be saved, how to get meaningful answers from the data.
+\subsection{Related user stories}
+User stories \# 3 and \# 4 
+\subsection{Solution}
+
+\subsection{Considered alternative solutions}
+\begin{itemize}
+    \item Data could otherwise be saved locally on the end users' device
+    \item A remote non-database server to save the chatlogs
+\end{itemize}
+\subsection{Influencing forces}
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Positive}
+    \begin{itemize}
+        \item Structured saving of valuable and useful data, letting the end users access and use it
+        \item Easy to implement, as well as use for developers and end users
+    \end{itemize}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Negative}
+    \begin{itemize}
+        \item Possibility of database going down, causing issues for end users.
+        \item Internet connection required to fetch data.
+    \end{itemize}
+\end{minipage}
+
+\subsection{Evaluation}
+
+\newpage
+\section{Django for web framework}
+\subsection{Description}
+
+\subsection{Stakeholder concerns}
+
+\subsection{Related user stories}
+
+\subsection{Solution}
+
+\subsection{Considered alternative solutions}
+
+\subsection{Influencing forces}
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Positive}
+    \begin{itemize}
+        \item Uses a lot of the developer's previous knowledge and skills
+        \item Effective framework for developing the app we have in mind
+    \end{itemize}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Negative}
+    \begin{itemize}
+        \item Developers have to learn and understand the framework before implementing starts
+    \end{itemize}
+\end{minipage}
+
+\subsection{Evaluation}
+
+\newpage
+\section{Tornado for web server}
+\subsection{Description}
+
+\subsection{Stakeholder concerns}
+
+\subsection{Related user stories}
+
+\subsection{Solution}
+
+\subsection{Considered alternative solutions}
+
+\subsection{Influencing forces}
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Positive}
+    \begin{itemize}
+        \item Event-based solution, making it 
+    \end{itemize}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \subsubsection*{Negative}
+    \begin{itemize}
+        \item Developers have to learn and understand the framework before implementing starts
+    \end{itemize}
+\end{minipage}
+
+\subsection{Evaluation}
+
+\newpage
+\section{UI and general look}
 \subsection{Description}
 
 \subsection{Stakeholder concerns}
@@ -57,79 +183,6 @@
         \item Ting 1
     \end{itemize}
 \end{minipage}
-
-\subsection{Evaluation}
-
-\newpage
-\section{Decision 2}
-\subsection{Description}
-
-\subsection{Stakeholder concerns}
-
-\subsection{Related user stories}
-
-\subsection{Solution}
-
-\subsection{Considered alternative solutions}
-
-\subsection{Positive influencing forces}
-
-\subsection{Negative influencing forces}
-
-\subsection{Evaluation}
-
-\newpage
-\section{Decision 3}
-\subsection{Description}
-
-\subsection{Stakeholder concerns}
-
-\subsection{Related user stories}
-
-\subsection{Solution}
-
-\subsection{Considered alternative solutions}
-
-
-\subsection{Positive influencing forces}
-
-\subsection{Negative influencing forces}
-
-\subsection{Evaluation}
-
-\newpage
-\section{Decision 4}
-\subsection{Description}
-
-\subsection{Stakeholder concerns}
-
-\subsection{Related user stories}
-
-\subsection{Solution}
-
-\subsection{Considered alternative solutions}
-
-\subsection{Positive influencing forces}
-
-\subsection{Negative influencing forces}
-
-\subsection{Evaluation}
-
-\newpage
-\section{Decision 5}
-\subsection{Description}
-
-\subsection{Stakeholder concerns}
-
-\subsection{Related user stories}
-
-\subsection{Solution}
-
-\subsection{Considered alternative solutions}
-
-\subsection{Positive influencing forces}
-
-\subsection{Negative influencing forces}
 
 \subsection{Evaluation}
 
