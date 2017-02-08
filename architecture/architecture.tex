@@ -20,6 +20,7 @@
   \href{#2}{#1}\footnote{\url{#2}}%
 }
 
+\titlespacing{\section}{0pt}{\parskip}{-4pt}
 \titlespacing{\subsection}{0pt}{\parskip}{-4pt}
 
 \setcounter{tocdepth}{1}
@@ -40,150 +41,161 @@
 \subsection{Description}
 Implementing the bot as a scalable web app
 \subsection{Stakeholder concerns}
-Concern from lecturers: Should work on both computers and smart phones. 
+Concern from lecturers: Should work on both computers and smart phones.
 \subsection{Related user stories}
 User story \# 9
 \subsection{Solution}
-Developing the bot as a scalable web app. Doing this, the bot will be easily accessed and utilized during lectures, as it's accessible through both laptops and mobile phones. 
+Developing the bot as a scalable web app. Doing this, the bot will be easily accessed and utilized during lectures, as it's accessible through both laptops and mobile phones.
 \subsection{Considered alternative solutions}
 \begin{itemize}
     \item Developing the bot as a native app running on either a computer or a mobile device.
     \item Developing the bot as a plugin to another existing application.
 \end{itemize}
 \subsection{Influencing forces}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Positive}
     \begin{itemize}
         \item Accessibility for the end users
         \item Ability to run on most devices without requiring extra development time
     \end{itemize}
 \end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Negative}
     \begin{itemize}
         \item Variable internet connection can cause difficulties
         \item Application may not be well supported by outdated software
     \end{itemize}
 \end{minipage}
-
 \subsection{Evaluation}
+We believe this is the best solution of all considered, compatibility is incredibly important for an application such as this, as well as not forcing students and teachers to download a native app to run on their phone/computer.
 
 \newpage
-\section{MySQL as database}
+\section{Database} % 2
 \subsection{Description}
-The chat logs will be saved in a MySQL database. 
+The chat logs will be saved in a MySQL database.
 \subsection{Stakeholder concerns}
 What will be saved, how to get meaningful answers from the data.
 \subsection{Related user stories}
-User stories \# 3 and \# 4 
+User stories \#3, \#4 and \#5.
 \subsection{Solution}
-
+For automatic saving of chatlogs for lecturers, they will be sent and stored structurally on a MySQL database server, where they'll be available for use
 \subsection{Considered alternative solutions}
 \begin{itemize}
     \item Data could otherwise be saved locally on the end users' device
     \item A remote non-database server to save the chatlogs
 \end{itemize}
 \subsection{Influencing forces}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Positive}
     \begin{itemize}
         \item Structured saving of valuable and useful data, letting the end users access and use it
         \item Easy to implement, as well as use for developers and end users
     \end{itemize}
 \end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Negative}
     \begin{itemize}
         \item Possibility of database going down, causing issues for end users.
         \item Internet connection required to fetch data.
     \end{itemize}
 \end{minipage}
-
 \subsection{Evaluation}
+A well known and popular platform for handling data. We think this is a good choice.
 
 \newpage
-\section{Django for web framework}
+\section{Web framework} %3
 \subsection{Description}
-
+Django is a web framework based on python designed for quick creation and less code. It emphasises reusability, rapid development and the principle of not repeating yourself.
 \subsection{Stakeholder concerns}
-
+The teams' experience with the framework.
 \subsection{Related user stories}
-
+There are really no user stories that specifically relate to this. All of them has something to do with this choice.
 \subsection{Solution}
-
+Develop the app using Django to make use of the various framework features and make development quicker and easier.
 \subsection{Considered alternative solutions}
-
+Writing the web page using plain HTML, a PHP framework or a Javascript framework (eg. AngularJS).
 \subsection{Influencing forces}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Positive}
     \begin{itemize}
         \item Uses a lot of the developer's previous knowledge and skills
         \item Effective framework for developing the app we have in mind
     \end{itemize}
 \end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Negative}
     \begin{itemize}
-        \item Developers have to learn and understand the framework before implementing starts
+        \item Developers have to learn and understand the framework prior to implementing
     \end{itemize}
 \end{minipage}
 
 \subsection{Evaluation}
+We are all familiar with python, so choosing a python framework seems like the obvious choice. Though we have no previous experience with the framework, we believe this framework will be very useful for developing our application, and understanding the framework will not take up too much precious development time.
 
 \newpage
-\section{Tornado for web server}
+\section{Real-time messaging server} %4
 \subsection{Description}
-
+We will use \emph{Centrifugo} as our real-time messaging server.
 \subsection{Stakeholder concerns}
-
+Students chatting must be connected together, over a safe and fast connection.
 \subsection{Related user stories}
-
+Same as Django.
 \subsection{Solution}
-
+For the system's communication, we will implement a Tornado web server, which allows for many open connections to be connected together. It is event-based which enables the functionality we want.
 \subsection{Considered alternative solutions}
-
+\begin{itemize}
+    \item A polling-based framework
+    \item Writing a server from scratch
+    \item Twisted
+    \item Tornado
+\end{itemize}
 \subsection{Influencing forces}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Positive}
     \begin{itemize}
-        \item Event-based solution, making it 
+        \item Event-based solution, making it suited for a chat program
     \end{itemize}
 \end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Negative}
     \begin{itemize}
-        \item Developers have to learn and understand the framework before implementing starts
+        \item Developers have to learn and understand the framework prior to implementing
     \end{itemize}
 \end{minipage}
-
 \subsection{Evaluation}
+It is a necessity for the product to be event-based, so to implement the web server in any other way would be detrimental to the project.
 
 \newpage
-\section{UI and general look}
+\section{Static web server} %5
 \subsection{Description}
-
+Static web content will be hosted on an NginX server.
 \subsection{Stakeholder concerns}
-
+The content hosted on the server has to be available at all times.
 \subsection{Related user stories}
-
+A part of the overarching functionality, and not connected to any specific user story.
 \subsection{Solution}
-
+For all static content which will not change as the end users use the application, having an NginX server to be stored on is appropriate.
 \subsection{Considered alternative solutions}
-
+\begin{itemize}
+    \item Apache
+    \item Cherokee
+    \item Gunicorn
+\end{itemize}
 \subsection{Influencing forces}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Positive}
     \begin{itemize}
-        \item Ting 1
+        \item Lets the application be loaded for users even if chat servers are down.
+        \item Moves workload away from the designated chat servers
     \end{itemize}
 \end{minipage}%
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
     \subsubsection*{Negative}
     \begin{itemize}
-        \item Ting 1
+        \item Might introduce extra costs in development time and/or money
     \end{itemize}
 \end{minipage}
-
 \subsection{Evaluation}
-
+We're confident having a designated server for static content will benefit the end users greatly, as well as relieve a lot of stress from the chat servers.
+For this purpose, NginX delivers what we need.
 \end{document}
