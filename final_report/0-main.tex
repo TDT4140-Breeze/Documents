@@ -1,0 +1,66 @@
+\documentclass[12pt, a4paper, titlepage]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{adjustbox}
+\usepackage{color}
+\usepackage{todonotes}
+\hypersetup{
+    colorlinks = true,
+}
+
+\newcommand\fnurl[2]{%
+  \href{#2}{#1}\footnote{\url{#2}}%
+}
+
+%\titlespacing{\section}{0pt}{\parskip}{-4pt}
+%\titlespacing{\subsection}{0pt}{\parskip}{-4pt}
+\setcounter{tocdepth}{2}
+
+\title{TDT4140 -- Software Engineering \\ Group 26: Final Report}
+
+\author{Sindre Hansen \and Vegard Helgesen Hesselberg \and Eirik Rismyhr \and Stian Sørli}
+
+\date{Spring 2017}
+
+\begin{document}
+\maketitle
+
+\pagestyle{empty}
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+}
+\clearpage
+\pagestyle{plain}
+
+\setcounter{page}{1}
+
+\input{1-summary}
+\newpage
+
+\input{2-planning}
+\newpage
+
+\input{3-methodology}
+\newpage
+
+\input{4-requirements}
+\newpage
+
+\input{5-architecture}
+\newpage
+
+\input{6-devcores}
+\newpage
+
+\input{7-evaluation}
+
+\end{document}

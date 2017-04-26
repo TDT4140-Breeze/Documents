@@ -1,0 +1,24 @@
+\section {Software Architecture}
+\subsection{General architectural decision}
+We decided to develop the bot as a scalable web app. This would make the application available to all students and teachers due to it being compatible with all modern web browsers. It also does not require any software to be downloaded by the end users, making the application easier to use and set up. We considered developing the bot as a native app or as a plugin to another existing application, but found the web solution to be the best for our idea.
+
+Our initial plan was to use a MySQL database server to store user information and the chat logs. We changed to PostgreSQL during sprint 2. This specific database works in a similar way, but we found this to be more suitable as the application grew in size. It took some time to set up and understand how it worked, but it has worked well. 
+
+We chose Django as our web framework, because of its emphasis on rapid development and reusability. Throughout the development of the product the various framework features has allowed us to develop the functionality in a quicker and easier way. It also took some time to learn and understand the framework, and this caused a delay in the development. We also considered writing the web page in plain HTML, a PHP framework or a Javascript framework. 
+
+\subsection{Detail architectural decision}
+\subsubsection{Selection of architectural patterns}
+The main component of the web site is the chat room. This is where Django Channels is useful. It allows Django to handle WebSockets in addition to just HTTP requests. This means that the users can send messages to the server and receive event-driven responses. This way, the user receives the new chat messages without having to refresh the page. The rest of the components of the site communicate using HTTP requests. 
+
+The time-saving aspects are one of the most important reasons why we chose to use Django. All of the HTML files are based on a base file, which contains the header and footer. This saved us time when creating new HTML pages. 
+
+User names, passwords and messages are stored on the server. When a user is logging in, the server checks the user name and password by retrieving them from the database. If the user logs in for the first time, a new record is created in the database. 
+
+Our system is built using a client/server pattern where all of the calculations are happening at the server side. The client doesn't have to download anything to access the site, nor will it put a heavy strain on the client.
+
+\subsubsection{Cross cutting concerns}
+To keep track of the logged in user across several web pages, the user name is stored in a cache. This is set when a user logs in, and the only thing stored in the cache is the user name which is an email address. This is used to retrieve content from the database by running a query which checks for a matching user name.
+
+We've put in several methods to simply avoid clutter between methods and views, for example if a view requires you to be logged in, there is no sensible way for a user to get to this view without being logged in. If they somehow still manage to get there, they will be redirected to safety without crashing the server.
+
+Django has several security features which can be used to prevent internal resources from being accessed by people who should not have access to them. This includes HTTPS, SSL and protection against SQL injection. We are using Django’s querysets, so the resulting SQL will be properly escaped by the underlying database driver. We are also using a CSRF token in our forms. This protects our site against Cross-site request forgery attacks.
