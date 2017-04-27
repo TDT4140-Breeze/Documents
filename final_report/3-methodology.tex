@@ -10,7 +10,7 @@
 \subsection{Practices}
 \subsubsection{Our practice cards}
 \begin{itemize}
-    \item User stories
+    \item User stories (Product backlog essentials -> Product backlog item)
     \item Use cases
     \item Sprint planning (Agile timeboxing essentials -> Plan a timebox)
     \item Sprint review (Agile timeboxing essentials -> Review a timebox)
@@ -23,16 +23,20 @@
     \item Continous integration (Agile development essentials -> Automate as much as possible)
     \item 2 week long sprints (Agile Timeboxing essentials -> Regular Heartbeat)
 \end{itemize}
-To gain an overview of what needed to be done, we set up a product backlog and sorted it based on priority. We also estimated how long time it would take to finish each backlog item, to help us plan our Sprints. It contains user stories which essentially state want we want our product to do. In each sprint we chose which user stories to work on based on their priority and estimated time usage.
+
+\subsubsection{How we built up our method}
+To gain an overview of what needed to be done, we set up a product backlog and sorted it based on priority. We also estimated how long time it would take to finish each backlog item, to help us plan our Sprints. It contains user stories which essentially state what we want our product to do. In each sprint we chose which user stories to work on based on their priority and estimated time usage. Our team was self-organizing and to help share knowledge we used pair programming.
+
+We built our SEMAT method using practice cards from Ivar Jacobson's Practice Library. There are a lot of different practices in Agile development, and this helped us focus on what we thought was most important.
 
 \subsection{Technical infrastructure}
 \begin{itemize}
     \item Front-end: Developed using Django, HTML, CSS and Javascript.
-    \item Back-end: Django, redis
+    \item Back-end: Django has built in support for the most popular SQL databases, so connecting Django and PostgreSQL was easy. Redis is an in-memory database which helps to make the site's performance better.
     \item Database: We originally planned to use a MySQL database, but we changed to PostgreSQL because it was more suitable for our product. The database was used to store user information, chat messages and to manage users present in the lobbies and chat rooms. 
     \item External frameworks: Our original plan was to use Centrifugo as our real-time messaging server. In Sprint 1 we discovered Django Channels and found this to be a better alternative. It performed the same functions, was easier to understand and allowed us to use something that was already integrated into Django.
     \item Development environment: The entire team developed in PyCharm by JetBrains, this helped the team keep up consistency. This also made it easier for us to collaborate on each others' machines.
-    \item  Deployment approaches: The product will be delivered in a code package that can be deployed using Django's built-in deployment features.
+    \item  Deployment approaches: The product will be delivered in a code package that can be deployed using Django's built-in deployment features. Installation procedures are included in our package.
 \end{itemize}
 
 \newpage
@@ -124,42 +128,6 @@ To gain an overview of what needed to be done, we set up a product backlog and s
 \end{adjustbox}
 
 \subsubsection{Quality assurance}
-We didn't allocate any time specifically to check for bugs. That happened continually while programming. It was each developers responsibility to push working code to github. Whenever a bug was found, its fixing was top priority.
+We didn't allocate any time specifically to check for bugs. That happened continually while programming. It was each developers responsibility to push working code to Github. Whenever a bug was found, its fixing was top priority. We didn't do any dedicated integration tests, this also happened continually when pushing to Github, and when the branches were merged into the development branch.
 
-\begin{adjustbox}{center}
-\begin{tabular}{l|l|l} %{ p{0.2\paperwidth} | p{0.25\paperwidth} | p{0.3\paperwidth} }
-    SQA Activities & Core 1 & Core 2  \\ \hline
-    %
-    Code Review
-    & 0 bugs
-    & 0 hours spent \\ \hline
-    %
-    Unit testing
-    & 0 bugs
-    & 0 hours spent \\ \hline
-    %
-    Integrated testing
-    & 0 bugs
-    & 0 hours spent
-   
-\end{tabular}
-\end{adjustbox}
-
-\begin{adjustbox}{center}
-\begin{tabular}{l|l|l}%{ p{0.2\paperwidth} | p{0.25\paperwidth} | p{0.3\paperwidth} }
-    SQA Activities & Core 3 & Core 4  \\ \hline
-    %
-    Code Review
-    & 0 bugs
-    & 0 hours spent \\ \hline
-    %
-    Unit testing
-    & 0 bugs
-    & 0 hours spent \\ \hline
-    %
-    Integrated testing
-    & 0 bugs
-    & 0 hours spent
-   
-\end{tabular}
-\end{adjustbox}
+Code review was done after Sprint 4, primarily to find and eliminate bugs in the system. We also made sure that the code was properly commented and followed our code conventions.
